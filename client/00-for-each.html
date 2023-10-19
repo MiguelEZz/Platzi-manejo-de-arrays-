@@ -1,0 +1,56 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach</title>
+ </head>
+ <body>
+    <div class="app"></div>
+    <div class="task"></div>
+    
+    <!-- APRENDIMOS:
+EN ESTA CLASE HEMOS ITERADO UN ARRAY DE OBJETOS 
+POR CADA ITERACION ESTAMOS IMPRIMIENDO LOS VALORES DEL OBJETO EN EL WINDOW 
+CON MANIPULACION DE DOM. CON INNER.HTML  
+
+
+TAREA:
+NOS PIDIO CREAR UN ARRAY CON TAREAS
+Y SI ESTA TAREA DICE QUE ESTA COMPLETADA MOSTRARLA CON UN CHECKED EN EL
+CHECKBOX -->
+
+    <script>
+        const products = [
+            {name: "burger", price: 122},
+            {name: "pizza", price: 34}
+        ]
+        const app = document.querySelector(".app");
+        products.forEach(prod => {
+        app.innerHTML +=  `<li>${prod.name} - ${prod.price}</li>`
+        })
+
+        // tarrea
+
+        const tasks = [
+            {course: "matematica", estado: "complete"},
+            {course: "ciencias", estado: "casito"}
+        ]
+        const tasaka = document.querySelector(".task");
+    
+        tasks.forEach(task => {
+            let clas = ""
+          if(task.estado == "complete"){
+                      clas = "checked"
+             }
+
+        tasaka.innerHTML +=  `<li>${task.course} - ${task.estado}
+        <input type="checkbox" id="name" name="name" required minlength="4" maxlength="8" size="10" ${clas} />
+        </li> `
+        
+    })
+
+    </script>
+ </body>
+ </html>
+
